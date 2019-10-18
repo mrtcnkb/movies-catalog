@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movies_detail_viewmodel"
+            type="com.muratcan.moviescatalog.viewmodel.MoviesDetailViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.view.MoviesDetailFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="@dimen/textsize_xlarge"
+            android:text="@string/movies_detail" />
+
+    </FrameLayout>
+</layout>

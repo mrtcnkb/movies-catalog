@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MoviesCatalog</string>
+    <string name="movies">Movies</string>
+    <string name="movies_detail">Movies Detail</string>
+</resources>

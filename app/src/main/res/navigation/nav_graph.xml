@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.muratcan.moviescatalog.ui.view.MoviesFragment"
+        android:label="MoviesFragment" >
+        <action
+            android:id="@+id/action_moviesFragment_to_moviesDetailFragment"
+            app:destination="@id/moviesDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moviesDetailFragment"
+        android:name="com.muratcan.moviescatalog.ui.view.MoviesDetailFragment"
+        android:label="MoviesDetailFragment" />
+</navigation>
