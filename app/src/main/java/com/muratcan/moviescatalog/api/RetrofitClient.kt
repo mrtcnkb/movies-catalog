@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 /**
- * Created by MuratCan on 17-10-2019.
+ * Created by MuratCan on 2019-10-17.
  */
 
 fun provideOkhttpClient(): OkHttpClient {

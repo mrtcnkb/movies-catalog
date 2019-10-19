@@ -9,7 +9,7 @@ import com.muratcan.moviescatalog.viewmodel.ActivityViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
- * Created by MuratCan on 17-10-2019.
+ * Created by MuratCan on 2019-10-17.
  */
 
 class SingleActivity : AppCompatActivity() {

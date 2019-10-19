@@ -8,26 +8,87 @@
             type="com.muratcan.moviescatalog.viewmodel.MoviesViewModel" />
     </data>
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="3"
+        android:background="@color/md_white_1000"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.view.MoviesFragment">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="@dimen/textsize_xlarge"
-            android:text="@string/movies" />
+            android:orientation="vertical"
+            android:background="@drawable/ic_frame_border"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:text="@string/title_popular"
+                android:textSize="@dimen/textsize_xlarge"
+                android:textStyle="bold"
+                android:padding="4dp"
+                android:textColor="@color/md_white_1000"
+                android:background="@drawable/ic_header_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_popular"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal"/>
 
-        <Button
-            android:id="@+id/navigate"
-            android:text="@string/movies_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentBottom="true"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/ic_frame_border"
+            android:layout_marginTop="10dp"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:text="@string/title_top_rated"
+                android:textSize="@dimen/textsize_xlarge"
+                android:textStyle="bold"
+                android:padding="4dp"
+                android:textColor="@color/md_white_1000"
+                android:background="@drawable/ic_header_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_top_rated"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal"/>
 
-    </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_frame_border"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:text="@string/title_revenue"
+                android:textSize="@dimen/textsize_xlarge"
+                android:textStyle="bold"
+                android:padding="4dp"
+                android:textColor="@color/md_white_1000"
+                android:background="@drawable/ic_header_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_revenue"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 </layout>

@@ -2,6 +2,7 @@ package com.muratcan.moviescatalog.util
 
 import android.app.Activity
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
@@ -10,18 +11,21 @@ import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.muratcan.moviescatalog.MoviesCatalogApplication
 import com.muratcan.moviescatalog.R
+import hari.bounceview.BounceView
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 /**
- * Created by MuratCan on 17-10-2019.
+ * Created by MuratCan on 2019-10-17.
  */
 
 
@@ -137,11 +141,15 @@ fun hideKeyboard(activity: Activity) {
 }
 
 fun getScreenHeight(): Int {
-    (MoviesCatalogApplication.context.getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay.getMetrics(DisplayMetrics())
-    return DisplayMetrics().heightPixels
+    val windowManager: WindowManager = MoviesCatalogApplication.context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+    val dm = DisplayMetrics()
+    windowManager.defaultDisplay.getMetrics(dm)
+    return dm.heightPixels
 }
 
 fun getScreenWidth(): Int{
-    (MoviesCatalogApplication.context.getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay.getMetrics(DisplayMetrics())
-    return DisplayMetrics().widthPixels
+    val windowManager: WindowManager = MoviesCatalogApplication.context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+    val dm = DisplayMetrics()
+    windowManager.defaultDisplay.getMetrics(dm)
+    return dm.widthPixels
 }

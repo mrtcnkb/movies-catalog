@@ -12,7 +12,7 @@ import com.muratcan.moviescatalog.viewmodel.MoviesDetailViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
- * Created by MuratCan on 18-10-2019.
+ * Created by MuratCan on 2019-10-18.
  */
 
 class MoviesDetailFragment : Fragment() {

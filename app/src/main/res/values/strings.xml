@@ -2,4 +2,11 @@
     <string name="app_name">MoviesCatalog</string>
     <string name="movies">Movies</string>
     <string name="movies_detail">Movies Detail</string>
+    <string name="title_popular">Popular</string>
+    <string name="title_top_rated">Top Rated</string>
+    <string name="title_revenue">Revenue</string>
+    <string name="went_wrong">Oops, something went wrong!</string>
+    <string name="check_network">Please check your network connection!</string>
+    <string name="unexpected_error">An unexpected error occurred, please try again later!</string>
+    <string name="okay">Okay</string>
 </resources>

@@ -10,7 +10,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 /**
- * Created by MuratCan on 17-10-2019.
+ * Created by MuratCan on 2019-10-17.
  */
 
 class MoviesCatalogApplication : Application() {

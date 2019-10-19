@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 import java.util.Map;
 
 /**
- * Created by MuratCan on 17-10-2019.
+ * Created by MuratCan on 2019-10-17.
  */
 
 public class Share {

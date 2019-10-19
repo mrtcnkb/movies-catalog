@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="@dimen/textsize_xlarge"
+            android:textSize="30sp"
             android:text="@string/movies_detail" />
 
     </FrameLayout>
