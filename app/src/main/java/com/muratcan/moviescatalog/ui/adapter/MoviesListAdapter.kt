@@ -16,6 +16,7 @@ import com.muratcan.moviescatalog.model.data.Result
 import com.muratcan.moviescatalog.ui.listener.ItemClickListener
 import com.muratcan.moviescatalog.util.getScreenWidth
 import com.muratcan.moviescatalog.util.loadImage
+import hari.bounceview.BounceView
 
 /**
  * Created by MuratCan on 2019-10-18.
@@ -34,6 +35,7 @@ class MoviesListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setData(getItem(position))
+        BounceView.addAnimTo(holder.frame).setScaleForPopOutAnim(1f, 0f)
         setAnimation(holder.itemView, position)
     }
 
@@ -65,6 +67,10 @@ class MoviesListAdapter(
 
     }
 
+    /**
+     * Ekranda 3 tam, 1 yarım item görünmesi için her itemin genişliğini tekrar set ediyoruz.
+     * Todo : Glide bitmap onResourceReady içerisinde bitmap ratio hesaplanıp hatasız bir genişlik hesaplama yapılacak
+     */
     fun calculateRowHeightAndWidth(v: View?) {
         val params = v?.layoutParams
         params?.height = ConstraintLayout.LayoutParams.MATCH_PARENT

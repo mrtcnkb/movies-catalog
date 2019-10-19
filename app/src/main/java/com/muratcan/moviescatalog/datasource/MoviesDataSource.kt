@@ -43,6 +43,7 @@ class MoviesDataSource(val paramType: ParameterTypeEnum, val isError: MutableLiv
             ParameterTypeEnum.POPULAR -> "popularity.desc"
             ParameterTypeEnum.TOP_RATED -> "vote_average.desc"
             ParameterTypeEnum.REVENUE -> "revenue.desc"
+            ParameterTypeEnum.RELEASE_DATE -> "release_date.desc"
         }
         return args
     }

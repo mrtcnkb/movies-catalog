@@ -3,92 +3,130 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="movies_viewmodel"
             type="com.muratcan.moviescatalog.viewmodel.MoviesViewModel" />
     </data>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:weightSum="3"
-        android:background="@color/md_white_1000"
-        android:padding="10dp"
+    <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.view.MoviesFragment">
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_white_1000"
             android:orientation="vertical"
-            android:background="@drawable/ic_frame_border"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <TextView
-                android:text="@string/title_popular"
-                android:textSize="@dimen/textsize_xlarge"
-                android:textStyle="bold"
-                android:padding="4dp"
-                android:textColor="@color/md_white_1000"
-                android:background="@drawable/ic_header_border"
+            android:padding="10dp"
+            tools:context=".ui.view.MoviesFragment">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview_popular"
-                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_frame_border"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_header_border"
+                    android:padding="4dp"
+                    android:text="@string/title_popular"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="@dimen/textsize_xlarge"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_popular"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:scrollbars="horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="horizontal"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_frame_border"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_header_border"
+                    android:padding="4dp"
+                    android:text="@string/title_top_rated"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="@dimen/textsize_xlarge"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_top_rated"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:scrollbars="horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_frame_border"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_header_border"
+                    android:padding="4dp"
+                    android:text="@string/title_revenue"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="@dimen/textsize_xlarge"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_revenue"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:scrollbars="horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_frame_border"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_header_border"
+                    android:padding="4dp"
+                    android:text="@string/title_release_date"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="@dimen/textsize_xlarge"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_release_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:scrollbars="horizontal" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:background="@drawable/ic_frame_border"
-            android:layout_marginTop="10dp"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <TextView
-                android:text="@string/title_top_rated"
-                android:textSize="@dimen/textsize_xlarge"
-                android:textStyle="bold"
-                android:padding="4dp"
-                android:textColor="@color/md_white_1000"
-                android:background="@drawable/ic_header_border"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview_top_rated"
-                android:layout_margin="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="horizontal"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/ic_frame_border"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <TextView
-                android:text="@string/title_revenue"
-                android:textSize="@dimen/textsize_xlarge"
-                android:textStyle="bold"
-                android:padding="4dp"
-                android:textColor="@color/md_white_1000"
-                android:background="@drawable/ic_header_border"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview_revenue"
-                android:layout_margin="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="horizontal"/>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
+    </ScrollView>
 </layout>

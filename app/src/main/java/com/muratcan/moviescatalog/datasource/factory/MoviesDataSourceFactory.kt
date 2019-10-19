@@ -10,7 +10,7 @@ import com.muratcan.moviescatalog.model.data.Result
  * Created by MuratCan on 2019-10-18.
  */
 
-class MoviesDataSourceFactory(val type: ParameterTypeEnum, val isError: MutableLiveData<Boolean>) : DataSource.Factory<String, Result>()  {
+class MoviesDataSourceFactory(private val type: ParameterTypeEnum, private val isError: MutableLiveData<Boolean>) : DataSource.Factory<String, Result>()  {
     override fun create(): DataSource<String, Result> {
         return MoviesDataSource(type, isError)
     }

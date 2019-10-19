@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -40,6 +41,7 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
     private lateinit var adapterPopular: MoviesListAdapter
     private lateinit var adapterTopRated: MoviesListAdapter
     private lateinit var adapterRevenue: MoviesListAdapter
+    private lateinit var adapterReleaseDate: MoviesListAdapter
     private var errMsg: String? = ""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -47,6 +49,7 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
         dataBinding = DataBindingUtil.inflate(inflater, R.layout.movies_fragment, container, false)
         dataBinding.lifecycleOwner = this
         dataBinding.moviesViewmodel = viewModel
+        setRecyclerviewHeight()
 
         viewModel.preparePagingFactories()
 
@@ -77,6 +80,10 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
             moviesListRevenue?.observe(this@MoviesFragment, Observer<PagedList<Result>> { dataList ->
                 adapterRevenue.submitList(dataList)
             })
+
+            moviesListReleaseDate?.observe(this@MoviesFragment, Observer<PagedList<Result>> { dataList ->
+                adapterReleaseDate.submitList(dataList)
+            })
         }
     }
 
@@ -85,6 +92,7 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
             recyclerviewPopular.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             recyclerviewTopRated.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             recyclerviewRevenue.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            recyclerviewReleaseDate.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
             adapterPopular = MoviesListAdapter(this@MoviesFragment)
             recyclerviewPopular.adapter = adapterPopular
@@ -94,6 +102,9 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
 
             adapterRevenue = MoviesListAdapter(this@MoviesFragment)
             recyclerviewRevenue.adapter = adapterRevenue
+
+            adapterReleaseDate = MoviesListAdapter(this@MoviesFragment)
+            recyclerviewReleaseDate.adapter = adapterReleaseDate
         }
     }
 
@@ -104,6 +115,21 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
             else
                 it.resources?.getString(R.string.unexpected_error)
             errorDialog(errMsg)
+        }
+    }
+
+    /**
+     * Her listenin yüksekliğini ekran genişliğinin yarısı olarak set ediyoruz.
+     */
+    private fun setRecyclerviewHeight(){
+        val params = dataBinding.recyclerviewPopular.layoutParams
+        params?.height = getScreenWidth() / 2
+        params?.width = LinearLayout.LayoutParams.MATCH_PARENT
+        with(dataBinding) {
+            recyclerviewPopular?.layoutParams = params
+            recyclerviewTopRated?.layoutParams = params
+            recyclerviewRevenue?.layoutParams = params
+            recyclerviewReleaseDate?.layoutParams = params
         }
     }
 

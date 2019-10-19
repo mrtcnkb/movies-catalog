@@ -20,11 +20,13 @@ class MoviesViewModel : ViewModel() {
     var moviesListPopular: LiveData<PagedList<Result>>? = null
     var moviesListTopRated: LiveData<PagedList<Result>>? = null
     var moviesListRevenue: LiveData<PagedList<Result>>? = null
+    var moviesListReleaseDate: LiveData<PagedList<Result>>? = null
 
     fun preparePagingFactories(){
         popularPagingFactory()
         topRatedPagingFactory()
         revenuePagingFactory()
+        releaseDatePagingFactory()
     }
 
     private fun popularPagingFactory(){
@@ -57,6 +59,17 @@ class MoviesViewModel : ViewModel() {
                 .build()
             val livePagedBuilder = LivePagedListBuilder<String, Result>(MoviesDataSourceFactory(ParameterTypeEnum.REVENUE, isError), config)
             moviesListRevenue = livePagedBuilder.build()
+        }
+    }
+
+    private fun releaseDatePagingFactory(){
+        if (moviesListReleaseDate?.value == null){
+            val config = PagedList.Config.Builder()
+                .setPageSize(20)
+                .setEnablePlaceholders(false)
+                .build()
+            val livePagedBuilder = LivePagedListBuilder<String, Result>(MoviesDataSourceFactory(ParameterTypeEnum.RELEASE_DATE, isError), config)
+            moviesListReleaseDate = livePagedBuilder.build()
         }
     }
 }

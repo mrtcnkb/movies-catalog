@@ -7,5 +7,6 @@ package com.muratcan.moviescatalog.model
 enum class ParameterTypeEnum {
     POPULAR,
     TOP_RATED,
-    REVENUE
+    REVENUE,
+    RELEASE_DATE
 }
