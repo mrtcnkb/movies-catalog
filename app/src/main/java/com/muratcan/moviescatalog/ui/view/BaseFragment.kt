@@ -8,13 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
-
 import com.muratcan.moviescatalog.R
 import com.muratcan.moviescatalog.databinding.BaseFragmentBinding
 import com.muratcan.moviescatalog.util.checkConnectivity
 import com.muratcan.moviescatalog.viewmodel.BaseViewModel
 import hari.bounceview.BounceView
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 /**
  * Created by MuratCan on 2019-10-19.
@@ -26,6 +28,7 @@ open class BaseFragment : Fragment() {
     val rootViewModel: BaseViewModel by viewModel()
     lateinit var dialog: AlertDialog
     lateinit var builder: AlertDialog.Builder
+    val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         rootBinding = BaseFragmentBinding.inflate(inflater, container, false)
@@ -66,5 +69,11 @@ open class BaseFragment : Fragment() {
                 dialog.show()
             }
         }
+    }
+
+    protected fun dateReformatter(oldDate: String?): String{
+        val sdf_old = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val tempDate = sdf_old.parse(oldDate)
+        return sdf.format(tempDate)
     }
 }

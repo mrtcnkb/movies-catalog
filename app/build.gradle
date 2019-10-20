@@ -46,6 +46,9 @@ android {
             buildConfigField 'String', 'API_KEY', '"114fe6670282f6a632638661e5e86dee"'
         }
     }
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {

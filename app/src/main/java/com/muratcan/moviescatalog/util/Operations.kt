@@ -2,7 +2,6 @@ package com.muratcan.moviescatalog.util
 
 import android.app.Activity
 import android.content.Context
-import android.content.DialogInterface
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
@@ -11,15 +10,12 @@ import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.muratcan.moviescatalog.MoviesCatalogApplication
 import com.muratcan.moviescatalog.R
-import hari.bounceview.BounceView
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -82,8 +78,8 @@ fun ImageView.loadCircularImage(c: Context, uri: Int) {
         .load(uri)
         .apply(
             RequestOptions()
-                .placeholder(R.drawable.ic_placeholder)
-                .error(R.drawable.ic_placeholder)
+                .placeholder(R.drawable.ic_transparent)
+                .error(R.drawable.ic_transparent)
         ).apply(RequestOptions.circleCropTransform())
         .into(this)
 }
@@ -93,8 +89,8 @@ fun ImageView.loadImage(c: Context, uri: Any) {
         .load(uri)
         .apply(
             RequestOptions()
-                .placeholder(R.drawable.ic_placeholder)
-                .error(R.drawable.ic_placeholder)
+                .placeholder(R.drawable.ic_transparent)
+                .error(R.drawable.ic_transparent)
         ).into(this)
 }
 
@@ -103,8 +99,8 @@ fun ImageView.loadImage(c: Context, uri: Int) {
         .load(uri)
         .apply(
             RequestOptions()
-                .placeholder(R.drawable.ic_placeholder)
-                .error(R.drawable.ic_placeholder)
+                .placeholder(R.drawable.ic_transparent)
+                .error(R.drawable.ic_transparent)
         ).into(this)
 }
 

@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/moviesDetailFragment"
         android:name="com.muratcan.moviescatalog.ui.view.MoviesDetailFragment"
-        android:label="MoviesDetailFragment" />
+        android:label="MoviesDetailFragment">
+        <argument
+            android:name="movieObject"
+            app:argType="com.muratcan.moviescatalog.model.data.Result" />
+    </fragment>
 </navigation>

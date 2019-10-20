@@ -2,15 +2,17 @@
 <resources>
         <!-- main -->
 
-    <color name="app_main_color">#f06800</color>
+    <color name="app_main_color">#e50a13</color>
 
     <color name="colorAccent">#f06800</color>
 
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#61041f</color>
 
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">#151515</color>
 
         <!-- new -->
+
+    <color name="netflix_red">#e50a13</color>
 
     <color name="facebook_blue">#415dae</color>
 

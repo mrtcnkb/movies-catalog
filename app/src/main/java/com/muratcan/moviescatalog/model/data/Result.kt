@@ -1,9 +1,13 @@
 package com.muratcan.moviescatalog.model.data
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 /**
  * Created by MuratCan on 2019-10-18.
  */
 
+@Parcelize
 data class Result(
     val adult: Boolean,
     val backdrop_path: String,
@@ -19,4 +23,12 @@ data class Result(
     val video: Boolean,
     val vote_average: Double,
     val vote_count: Int
-)
+): Parcelable{
+    fun getDescription(): String{
+        return "\t\t$overview"
+    }
+
+    fun getRate(): String{
+        return vote_average.toString()
+    }
+}

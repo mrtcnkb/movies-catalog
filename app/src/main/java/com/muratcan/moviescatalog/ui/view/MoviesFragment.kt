@@ -33,7 +33,10 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MoviesFragment : BaseFragment(), ItemClickListener {
 
     override fun onItemClick(view: View, position: Int, selected: Result?) {
-        //Todo: navigation component arguman eklenip detay sayfasına yönlendirilecek.
+        selected?.let {
+            val direction = MoviesFragmentDirections.ActionMoviesFragmentToMoviesDetailFragment(it)
+            findNavController().navigate(direction)
+        }
     }
 
     private val viewModel: MoviesViewModel by viewModel()
@@ -108,6 +111,9 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
         }
     }
 
+    /**
+     * Hata durumunda ilk önce internet check ediliyor. Bağlantı hatası yoksa ayrı bir mesaj veriliyor.
+     */
     private fun showErrorMessage(){
         context?.let {
             errMsg = if (!checkConnectivity(it))
@@ -123,7 +129,7 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
      */
     private fun setRecyclerviewHeight(){
         val params = dataBinding.recyclerviewPopular.layoutParams
-        params?.height = getScreenWidth() / 2
+        params?.height = (getScreenWidth() / 5) * 2
         params?.width = LinearLayout.LayoutParams.MATCH_PARENT
         with(dataBinding) {
             recyclerviewPopular?.layoutParams = params
