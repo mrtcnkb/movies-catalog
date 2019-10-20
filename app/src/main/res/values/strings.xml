@@ -10,4 +10,6 @@
     <string name="check_network">Please check your network connection!</string>
     <string name="unexpected_error">An unexpected error occurred, please try again later!</string>
     <string name="okay">Okay</string>
+    <string name="no_date_entered">(No date entered)</string>
+    <string name="no_desc_entered">(No description available)</string>
 </resources>

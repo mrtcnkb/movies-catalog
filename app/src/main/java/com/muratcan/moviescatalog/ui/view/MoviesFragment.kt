@@ -34,8 +34,9 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
 
     override fun onItemClick(view: View, position: Int, selected: Result?) {
         selected?.let {
-            val direction = MoviesFragmentDirections.ActionMoviesFragmentToMoviesDetailFragment(it)
-            findNavController().navigate(direction)
+            findNavController().navigate(
+                MoviesFragmentDirections.ActionMoviesFragmentToMoviesDetailFragment(it)
+            )
         }
     }
 
@@ -53,7 +54,10 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
         dataBinding.lifecycleOwner = this
         dataBinding.moviesViewmodel = viewModel
         setRecyclerviewHeight()
-
+        Log.e("oncreate","oncreateview ->")
+        /**
+         * PagingFactory builder
+         */
         viewModel.preparePagingFactories()
 
         prepareListeners()
@@ -112,7 +116,7 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
     }
 
     /**
-     * Hata durumunda ilk önce internet check ediliyor. Bağlantı hatası yoksa ayrı bir mesaj veriliyor.
+     * Hata durumunda mesaj veriliyor.
      */
     private fun showErrorMessage(){
         context?.let {
@@ -125,7 +129,7 @@ class MoviesFragment : BaseFragment(), ItemClickListener {
     }
 
     /**
-     * Her listenin yüksekliğini ekran genişliğinin yarısı olarak set ediyoruz.
+     * rv boyutlandırma yapılıyor.
      */
     private fun setRecyclerviewHeight(){
         val params = dataBinding.recyclerviewPopular.layoutParams

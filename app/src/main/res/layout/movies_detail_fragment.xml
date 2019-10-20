@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="movies_detail_viewmodel"
+            name="movieDetailViewmodel"
             type="com.muratcan.moviescatalog.viewmodel.MoviesDetailViewModel" />
     </data>
 
@@ -36,6 +36,7 @@
 
                 <ImageView
                     android:id="@+id/backdrop"
+                    app:loadPhoto="@{movieDetailViewmodel.movieObject.backdrop_path}"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/colorPrimaryDark"
@@ -59,11 +60,12 @@
                         android:weightSum="2">
 
                         <TextView
+                            android:text="@{movieDetailViewmodel.movieObject.title}"
                             android:id="@+id/title"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:textSize="@dimen/textsize_xlarge"
+                            android:textSize="@dimen/textsize_large"
                             android:gravity="center|start"
                             android:textColor="@color/md_white_1000"
                             android:textStyle="bold" />
@@ -87,6 +89,7 @@
 
                             <TextView
                                 android:id="@+id/rate"
+                                android:text="@{movieDetailViewmodel.movieObject.vote_average}"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="3dp"
@@ -97,6 +100,7 @@
 
                             <TextView
                                 android:id="@+id/release_date"
+                                android:text="@{movieDetailViewmodel.movieObject.getFormattedDate()}"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_marginEnd="3dp"
@@ -133,6 +137,7 @@
 
                 <TextView
                     android:id="@+id/description"
+                    android:text="@{movieDetailViewmodel.movieObject.getDescription()}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/textsize_medium"

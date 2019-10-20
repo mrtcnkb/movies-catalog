@@ -6,6 +6,8 @@ apply plugin: 'androidx.navigation.safeargs'
 
 apply plugin: 'kotlin-android'
 
+apply plugin: 'kotlin-kapt'
+
 
 buildscript {
     repositories {
@@ -82,9 +84,9 @@ dependencies {
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:3.0.3'           // Vp indicator
     implementation 'com.facebook.shimmer:shimmer:0.4.0'                         // Shimmer
     implementation 'com.github.bumptech.glide:glide:4.9.0'                      // Glide
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     implementation 'com.airbnb.android:lottie:3.0.7'                            // Lottie
     implementation 'hari.bounceview:bounceview:0.1.0'                           // BounceView
-
 
     testİmplementation 'junit:junit:4.12'
     androidTestİmplementation 'androidx.test.ext:junit:1.1.0'

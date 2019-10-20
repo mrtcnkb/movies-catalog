@@ -24,7 +24,6 @@ import com.muratcan.moviescatalog.R
 import com.muratcan.moviescatalog.model.data.Result
 import com.muratcan.moviescatalog.ui.listener.ItemClickListener
 import com.muratcan.moviescatalog.util.getScreenWidth
-import com.muratcan.moviescatalog.util.loadImage
 import hari.bounceview.BounceView
 
 /**
@@ -37,8 +36,6 @@ class MoviesListAdapter(
     private var lastPosition = -1
     private var mColumn: Int = 3
     private val width: Int = getScreenWidth()
-    private var photoWidth: Int = 0
-    private var photoHeight: Int = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_movies, parent, false))

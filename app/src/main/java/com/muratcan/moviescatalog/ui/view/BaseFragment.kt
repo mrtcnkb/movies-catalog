@@ -24,11 +24,10 @@ import java.util.*
 
 open class BaseFragment : Fragment() {
 
-    lateinit var rootBinding: BaseFragmentBinding
-    val rootViewModel: BaseViewModel by viewModel()
-    lateinit var dialog: AlertDialog
-    lateinit var builder: AlertDialog.Builder
-    val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+    protected lateinit var rootBinding: BaseFragmentBinding
+    private val rootViewModel: BaseViewModel by viewModel()
+    private lateinit var dialog: AlertDialog
+    private lateinit var builder: AlertDialog.Builder
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         rootBinding = BaseFragmentBinding.inflate(inflater, container, false)
@@ -71,9 +70,4 @@ open class BaseFragment : Fragment() {
         }
     }
 
-    protected fun dateReformatter(oldDate: String?): String{
-        val sdf_old = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-        val tempDate = sdf_old.parse(oldDate)
-        return sdf.format(tempDate)
-    }
 }
