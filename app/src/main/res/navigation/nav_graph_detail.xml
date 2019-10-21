@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_detail"
+    app:startDestination="@id/moviesDetailFragment2">
+
+    <fragment
+        android:id="@+id/moviesDetailFragment2"
+        android:name="com.muratcan.moviescatalog.ui.view.MoviesDetailFragment"
+        android:label="MoviesDetailFragment">
+        <argument
+            android:name="movieObject"
+            app:argType="com.muratcan.moviescatalog.model.data.Result"
+            app:nullable="true"/>
+    </fragment>
+    <argument android:defaultValue="null"
+        android:name="movieObject"
+        app:nullable="true"/>
+</navigation>

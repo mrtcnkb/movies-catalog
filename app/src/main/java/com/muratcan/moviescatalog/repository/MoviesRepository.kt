@@ -16,7 +16,7 @@ class MoviesRepository(private val retrofit: Service) {
     suspend fun fetchMovies(hm: HashMap<String, String>): MoviesResponse? {
         return withContext(Dispatchers.IO) {
             try {
-                return@withContext retrofit.fetchMovies(BuildConfig.API_KEY, hm["page"],"tr-TR", hm["include_adult"], hm["include_video"], hm["sort_by"])
+                return@withContext retrofit.fetchMovies(BuildConfig.API_KEY, hm["page"],"en-US", hm["include_adult"], hm["include_video"], hm["sort_by"])
             }catch (e: Exception){
                 e.printStackTrace()
                 return@withContext null

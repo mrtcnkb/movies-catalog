@@ -12,4 +12,8 @@
     <string name="okay">Okay</string>
     <string name="no_date_entered">(No date entered)</string>
     <string name="no_desc_entered">(No description available)</string>
+    <string name="sort_popular">popularity.desc</string>
+    <string name="sort_top_rated">vote_average.desc</string>
+    <string name="sort_revenue">revenue.desc</string>
+    <string name="sort_release_date">release_date.desc</string>
 </resources>

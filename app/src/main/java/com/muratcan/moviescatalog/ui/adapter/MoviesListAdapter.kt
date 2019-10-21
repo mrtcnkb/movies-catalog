@@ -23,6 +23,7 @@ import com.muratcan.moviescatalog.BuildConfig
 import com.muratcan.moviescatalog.R
 import com.muratcan.moviescatalog.model.data.Result
 import com.muratcan.moviescatalog.ui.listener.ItemClickListener
+import com.muratcan.moviescatalog.util.Config.isTablet
 import com.muratcan.moviescatalog.util.getScreenWidth
 import hari.bounceview.BounceView
 
@@ -35,7 +36,7 @@ class MoviesListAdapter(
 
     private var lastPosition = -1
     private var mColumn: Int = 3
-    private val width: Int = getScreenWidth()
+    private val newHeight: Int = if (isTablet) ((getScreenWidth()/6)*4.5).toInt() else getScreenWidth()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_movies, parent, false))
@@ -93,7 +94,7 @@ class MoviesListAdapter(
                     .into(it)
             }
 
-            frame?.setOnClickListener {
+            itemView.setOnClickListener {
                 clickListener.onItemClick(it, adapterPosition, item)
             }
 
@@ -108,7 +109,7 @@ class MoviesListAdapter(
     fun calculateRowHeightAndWidth(v: View?) {
         val params = v?.layoutParams
         params?.height = ConstraintLayout.LayoutParams.MATCH_PARENT
-        params?.width = ((width - 180) / mColumn)
+        params?.width = ((newHeight - 180) / mColumn)
         v?.layoutParams = params
     }
 

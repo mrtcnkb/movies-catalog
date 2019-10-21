@@ -26,7 +26,7 @@ class MoviesDetailFragment : BaseFragment() {
         dataBinding.lifecycleOwner = this
         dataBinding.movieDetailViewmodel = viewModel
 
-        arguments?.let { viewModel.movieObject.value = fromBundle(it).movieObject }
+        fromBundle(arguments).movieObject?.let { viewModel.movieObject.value = it }
 
         setRootView(dataBinding.root)
         return rootBinding.root

@@ -103,7 +103,7 @@ public class Share {
     }
 
     /**
-     *  Clear sharedpref. without registered login data.
+     *  Giriş ekranı olduğu durumlarda beni hatırla için kullanacağız.
      */
     public static void removeWithExFilter(String ex) {
         Map<String, ?> allEntries = ourInstance.preferences.getAll();
